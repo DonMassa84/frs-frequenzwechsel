@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">FRS Frequenzwechsel</title><desc id="desc">Abstrakte orange und violette Signalringe auf dunklem Grund</desc>
+  <rect width="800" height="500" fill="#14121b"/>
+  <circle cx="400" cy="235" r="172" fill="none" stroke="#f37b3d" stroke-width="3" opacity=".95"/>
+  <circle cx="400" cy="235" r="126" fill="none" stroke="#d457bd" stroke-width="12" opacity=".95"/>
+  <circle cx="400" cy="235" r="78" fill="none" stroke="#f5b35b" stroke-width="4"/>
+  <path d="M74 235h184m284 0h184M400 63v65m0 214v65" stroke="#f37b3d" stroke-width="5" stroke-linecap="round"/>
+  <path d="M155 315c54 38 112 57 175 57s121-19 175-57" fill="none" stroke="#d457bd" stroke-width="3"/>
+  <text x="400" y="227" text-anchor="middle" fill="#fff8f0" font-family="Arial,sans-serif" font-size="42" font-weight="700" letter-spacing="5">FRS</text>
+  <text x="400" y="270" text-anchor="middle" fill="#f5b35b" font-family="Arial,sans-serif" font-size="19" letter-spacing="7">FREQUENZWECHSEL</text>
+</svg>
