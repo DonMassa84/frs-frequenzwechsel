@@ -6,6 +6,14 @@ Lokale Musikvorbereitung für eine elektronische Sendung beim Freien Radio Stutt
 
 **FRS Frequenzwechsel** verbindet Deep House, House, Techno, Trance, Electro, EDM/Dance und ruhige elektronische Übergänge. Die erste Auswahl ist als musikalische Reise aufgebaut: Ankommen, Groove, Verdichtung, Nachtfahrt und Ausklang.
 
+## Website & Plenum-Pitch
+
+- `website/index.html` – interaktiver Sendeleitfaden
+- `website/plenum.html` – Präsentation für das FRS-Plenum am 07.10.2026 zum einmaligen Vinyl-DJ-Special
+- Navigation in der Präsentation: Pfeiltasten / PageUp / PageDown; `N` blendet Sprecherhinweise ein
+
+Der Plenum-Pitch ist als eigenständige responsive Website aufgebaut und fokussiert die fünf Entscheidungen, die für den Pilot benötigt werden: redaktionelle Zuständigkeit, Sendeplatz, Dauer, Technik und nächster verbindlicher Schritt.
+
 ## Inhalt
 
 - `playlists/sendung_01_frs_frequenzwechsel.m3u` – nummerierte Playlist
