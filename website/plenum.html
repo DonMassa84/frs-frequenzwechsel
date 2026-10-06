@@ -2,311 +2,80 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="FRS Frequenzwechsel – Plenum-Pitch für ein einmaliges Vinyl-DJ-Special.">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="FRS Frequenzwechsel – Plenum-Pitch 07.10.2026 für ein einmaliges Vinyl-DJ-Special.">
   <meta name="theme-color" content="#14110f">
   <title>FRS Frequenzwechsel · Plenum Pitch 07.10.2026</title>
   <link rel="icon" href="assets/frequenzwechsel-mark.svg" type="image/svg+xml">
   <style>
-    :root{
-      --bg:#14110f;
-      --panel:#1d1916;
-      --panel2:#25201c;
-      --ink:#fff8ef;
-      --muted:#c7b9aa;
-      --orange:#e4572e;
-      --orange2:#ff7a43;
-      --sand:#e9d8c3;
-      --line:rgba(255,248,239,.14);
-      --ok:#9fd3b1;
-      --shadow:0 24px 70px rgba(0,0,0,.42);
-      --radius:28px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    body{overflow:hidden;background:
-      radial-gradient(900px 560px at 100% 0%,rgba(228,87,46,.22),transparent 58%),
-      radial-gradient(700px 520px at 0% 100%,rgba(255,122,67,.10),transparent 60%),
-      var(--bg)}
-    a{color:inherit}
-    button{font:inherit}
-    .deck{position:relative;width:100vw;height:100dvh;overflow:hidden}
-    .slide{position:absolute;inset:0;padding:clamp(24px,4vw,64px);display:grid;grid-template-rows:auto 1fr auto;gap:24px;opacity:0;transform:translateX(36px) scale(.985);pointer-events:none;transition:opacity .32s ease,transform .32s ease}
-    .slide.active{opacity:1;transform:none;pointer-events:auto}
-    .topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;z-index:2}
-    .brand{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-    .brand img{width:42px;height:42px}
-    .brand b{display:block;color:var(--ink);font-size:14px;letter-spacing:.05em}
-    .meta{font-size:12px;color:var(--muted);text-align:right}
-    .frame{align-self:center;width:min(1180px,100%);margin:0 auto}
-    .eyebrow{margin:0 0 14px;color:var(--orange2);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:12px}
-    h1,h2,h3,p{margin-top:0}
-    h1{font-size:clamp(44px,8vw,108px);line-height:.92;letter-spacing:-.055em;margin-bottom:28px;max-width:1050px}
-    h2{font-size:clamp(34px,5.2vw,72px);line-height:.98;letter-spacing:-.045em;margin-bottom:26px;max-width:980px}
-    h3{font-size:clamp(20px,2.2vw,30px);line-height:1.05;margin-bottom:12px}
-    .lead{font-size:clamp(19px,2.2vw,30px);line-height:1.35;color:var(--sand);max-width:900px}
-    .accent{color:var(--orange2)}
-    .hero-grid,.two,.three{display:grid;gap:22px}
-    .hero-grid{grid-template-columns:minmax(0,1.45fr) minmax(280px,.75fr);align-items:end}
-    .two{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .three{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .card{background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.022));border:1px solid var(--line);border-radius:var(--radius);padding:clamp(20px,2.5vw,34px);box-shadow:var(--shadow)}
-    .card.orange{background:linear-gradient(145deg,var(--orange),#9e3217);border-color:rgba(255,255,255,.18)}
-    .big-number{font-size:clamp(56px,8vw,112px);font-weight:900;letter-spacing:-.06em;line-height:.85}
-    .statline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
-    .stat{padding:18px;border-top:1px solid var(--line)}
-    .stat strong{display:block;font-size:clamp(24px,3.4vw,48px);letter-spacing:-.04em}
-    .stat span{display:block;color:var(--muted);font-size:13px;margin-top:6px}
-    .person{min-height:220px;display:flex;flex-direction:column;justify-content:space-between}
-    .person .num{color:var(--orange2);font-weight:900;font-size:14px}
-    .person p{color:var(--muted);line-height:1.55;margin-bottom:0}
-    .rundown{display:grid;gap:10px}
-    .run{display:grid;grid-template-columns:110px 1fr 120px;gap:18px;align-items:center;padding:18px 20px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid var(--line)}
-    .run time{font-weight:900;color:var(--orange2)}
-    .run b{font-size:18px}
-    .run span{color:var(--muted);text-align:right}
-    .tech{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}
-    .deck-graphic{position:relative;min-height:360px;overflow:hidden}
-    .record{position:absolute;width:260px;height:260px;border-radius:50%;background:repeating-radial-gradient(circle at 50% 50%,#211d1a 0 7px,#151210 8px 11px);border:2px solid #40362f;right:10%;top:50%;transform:translateY(-50%);box-shadow:0 25px 70px rgba(0,0,0,.55)}
-    .record:before{content:"";position:absolute;inset:92px;border-radius:50%;background:var(--orange);border:14px solid #111}
-    .record:after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:#f7e7d7;left:50%;top:50%;transform:translate(-50%,-50%)}
-    .tonearm{position:absolute;width:180px;height:12px;background:#c9b8a5;right:3%;top:24%;transform:rotate(39deg);transform-origin:right center;border-radius:99px;box-shadow:0 3px 10px rgba(0,0,0,.4)}
-    .tonearm:after{content:"";position:absolute;left:-18px;top:-8px;width:28px;height:28px;background:#23201e;border:2px solid #c9b8a5;border-radius:5px}
-    ul.clean{list-style:none;padding:0;margin:0;display:grid;gap:14px}
-    ul.clean li{display:flex;gap:12px;align-items:flex-start;font-size:clamp(17px,1.8vw,23px);line-height:1.35}
-    ul.clean li:before{content:"→";color:var(--orange2);font-weight:900}
-    .option{position:relative;min-height:230px}
-    .option .tag{display:inline-flex;padding:7px 10px;border:1px solid var(--line);border-radius:999px;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
-    .option.recommended{border-color:rgba(228,87,46,.65);box-shadow:0 0 0 1px rgba(228,87,46,.2),var(--shadow)}
-    .option.recommended:after{content:"EMPFEHLUNG";position:absolute;right:18px;top:18px;color:var(--orange2);font-size:10px;font-weight:900;letter-spacing:.14em}
-    .decision-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:26px}
-    .decision{min-height:190px;padding:20px;border-radius:22px;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between}
-    .decision .n{color:var(--orange2);font-weight:900;font-size:12px}
-    .decision b{font-size:18px;line-height:1.2}
-    .decision small{color:var(--muted);line-height:1.35}
-    .fallback{margin-top:18px;padding:16px 18px;border-left:4px solid var(--orange);background:rgba(228,87,46,.08);color:var(--sand);border-radius:0 14px 14px 0}
-    .footer{display:flex;align-items:center;justify-content:space-between;gap:16px;color:var(--muted);font-size:12px;z-index:2}
-    .progress{flex:1;max-width:360px;height:4px;border-radius:99px;background:rgba(255,255,255,.09);overflow:hidden}
-    .progress i{display:block;height:100%;background:var(--orange2);width:12.5%;transition:width .25s ease}
-    .controls{position:fixed;right:22px;bottom:20px;z-index:10;display:flex;gap:8px}
-    .controls button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(20,17,15,.82);color:var(--ink);cursor:pointer;backdrop-filter:blur(8px)}
-    .controls button:hover{background:var(--orange)}
-    .notes{position:fixed;left:22px;bottom:20px;z-index:9;max-width:min(560px,calc(100vw - 160px));padding:14px 16px;background:rgba(20,17,15,.94);border:1px solid var(--line);border-radius:14px;color:var(--sand);font-size:13px;line-height:1.45;display:none;box-shadow:var(--shadow)}
-    .notes.show{display:block}
-    .notes b{color:var(--orange2)}
-    .kbd{display:inline-block;padding:2px 6px;border:1px solid var(--line);border-radius:5px;color:var(--muted);font-size:10px}
-    .signal{display:flex;align-items:end;gap:6px;height:90px;margin-top:26px}
-    .signal i{display:block;width:8px;background:linear-gradient(var(--orange2),var(--orange));border-radius:99px;animation:pulse 1.5s ease-in-out infinite alternate}
-    .signal i:nth-child(1){height:22%}.signal i:nth-child(2){height:62%;animation-delay:.1s}.signal i:nth-child(3){height:88%;animation-delay:.2s}.signal i:nth-child(4){height:38%;animation-delay:.3s}.signal i:nth-child(5){height:72%;animation-delay:.4s}.signal i:nth-child(6){height:100%;animation-delay:.5s}.signal i:nth-child(7){height:52%;animation-delay:.6s}.signal i:nth-child(8){height:78%;animation-delay:.7s}.signal i:nth-child(9){height:32%;animation-delay:.8s}.signal i:nth-child(10){height:66%;animation-delay:.9s}
-    @keyframes pulse{to{transform:scaleY(.55);opacity:.65}}
-    @media(max-width:850px){
-      .slide{padding:22px 18px 78px;overflow-y:auto}
-      .hero-grid,.two,.three,.tech{grid-template-columns:1fr}
-      .statline{grid-template-columns:repeat(2,1fr)}
-      .decision-grid{grid-template-columns:1fr 1fr}
-      .run{grid-template-columns:80px 1fr}.run span{grid-column:2;text-align:left}
-      .deck-graphic{min-height:300px}.record{width:220px;height:220px}.record:before{inset:76px}
-      .meta{display:none}
-    }
-    @media(max-width:520px){
-      .decision-grid{grid-template-columns:1fr}
-      h1{font-size:48px}.brand span{display:none}.controls{right:14px;bottom:12px}.notes{left:12px;bottom:64px;max-width:calc(100vw - 24px)}
-    }
-    @media print{
-      body{overflow:visible;background:#fff;color:#111}
-      .deck{height:auto;overflow:visible}.slide{position:relative;opacity:1;transform:none;pointer-events:auto;min-height:100vh;page-break-after:always;background:#fff;color:#111}
-      .card,.decision,.run{box-shadow:none;background:#f6f3ef;border-color:#ddd}.controls,.notes{display:none!important}.muted,.meta,.brand,.footer{color:#555}.lead,.person p,ul.clean li,.fallback{color:#333}
-    }
+    :root{--bg:#14110f;--panel:#1d1916;--ink:#fff8ef;--muted:#c7b9aa;--accent:#ff7a43;--accent2:#e4572e;--sand:#e9d8c3;--line:rgba(255,248,239,.14);--ok:#9fd3b1;--shadow:0 24px 70px rgba(0,0,0,.42);--radius:26px}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    body{overflow:hidden;background:radial-gradient(900px 560px at 100% 0%,rgba(228,87,46,.22),transparent 58%),radial-gradient(700px 520px at 0% 100%,rgba(255,122,67,.10),transparent 60%),var(--bg)}
+    .deck{position:relative;width:100vw;height:100dvh;overflow:hidden}.slide{position:absolute;inset:0;padding:clamp(24px,4vw,64px);display:grid;grid-template-rows:auto 1fr auto;gap:24px;opacity:0;transform:translateX(36px) scale(.985);pointer-events:none;transition:.28s ease}.slide.active{opacity:1;transform:none;pointer-events:auto}
+    .top{display:flex;justify-content:space-between;align-items:center;gap:18px}.brand{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:12px;letter-spacing:.11em;text-transform:uppercase}.brand img{width:42px;height:42px}.brand b{display:block;color:var(--ink);font-size:14px}.meta{font-size:12px;color:var(--muted);text-align:right}.frame{align-self:center;width:min(1180px,100%);margin:auto}.eyebrow{color:var(--accent);font-weight:900;letter-spacing:.13em;text-transform:uppercase;font-size:12px;margin:0 0 14px}.accent{color:var(--accent)}
+    h1,h2,h3,p{margin-top:0}h1{font-size:clamp(46px,8vw,106px);line-height:.92;letter-spacing:-.055em;margin-bottom:26px}h2{font-size:clamp(34px,5vw,70px);line-height:.98;letter-spacing:-.045em;margin-bottom:24px}h3{font-size:clamp(20px,2.1vw,29px);margin-bottom:10px}.lead{font-size:clamp(18px,2.1vw,29px);line-height:1.35;color:var(--sand);max-width:920px}
+    .hero,.two,.three{display:grid;gap:22px}.hero{grid-template-columns:1.45fr .75fr;align-items:end}.two{grid-template-columns:repeat(2,minmax(0,1fr))}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.022));border:1px solid var(--line);border-radius:var(--radius);padding:clamp(20px,2.5vw,34px);box-shadow:var(--shadow)}.card.hot{background:linear-gradient(145deg,var(--accent2),#9e3217)}.card.ok{border-color:rgba(159,211,177,.42)}
+    .big{font-size:clamp(54px,8vw,108px);font-weight:900;letter-spacing:-.06em;line-height:.85}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}.stat{padding:16px;border-top:1px solid var(--line)}.stat strong{display:block;font-size:clamp(24px,3.2vw,46px)}.stat span{display:block;color:var(--muted);font-size:13px;margin-top:5px}
+    ul.clean{list-style:none;padding:0;margin:0;display:grid;gap:14px}ul.clean li{display:flex;gap:12px;font-size:clamp(16px,1.75vw,22px);line-height:1.35}ul.clean li:before{content:"→";color:var(--accent);font-weight:900}.yes li:before{content:"✓";color:var(--ok)}
+    .people .card{min-height:205px;display:flex;flex-direction:column;justify-content:space-between}.person-no{color:var(--accent);font-weight:900;font-size:13px}.muted{color:var(--muted);line-height:1.5}.rundown{display:grid;gap:10px}.run{display:grid;grid-template-columns:100px 1fr 130px;gap:18px;align-items:center;padding:17px 20px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid var(--line)}.run time{font-weight:900;color:var(--accent)}.run span{color:var(--muted);text-align:right}.decisions{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:24px}.decision{min-height:180px;padding:20px;border-radius:22px;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between}.decision .n{color:var(--accent);font-size:12px;font-weight:900}.decision small{color:var(--muted);line-height:1.35}.tag{display:inline-flex;padding:7px 10px;border:1px solid var(--line);border-radius:99px;color:var(--muted);font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}.callout{margin-top:18px;padding:16px 18px;border-left:4px solid var(--accent2);background:rgba(228,87,46,.08);color:var(--sand);border-radius:0 14px 14px 0}
+    .footer{display:flex;align-items:center;justify-content:space-between;gap:14px;color:var(--muted);font-size:12px}.progress{flex:1;max-width:360px;height:4px;background:rgba(255,255,255,.09);border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:var(--accent);width:14.285%;transition:.2s ease}.controls{position:fixed;right:22px;bottom:20px;z-index:10;display:flex;gap:8px}.controls button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(20,17,15,.86);color:var(--ink);font:inherit;cursor:pointer}.controls button:hover{background:var(--accent2)}.notes{position:fixed;left:22px;bottom:20px;z-index:9;max-width:min(650px,calc(100vw - 160px));padding:14px 16px;background:rgba(20,17,15,.95);border:1px solid var(--line);border-radius:14px;color:var(--sand);font-size:13px;line-height:1.45;display:none;box-shadow:var(--shadow)}.notes.show{display:block}.kbd{display:inline-block;padding:2px 6px;border:1px solid var(--line);border-radius:5px;font-size:10px}
+    @media(max-width:850px){.slide{padding:22px 18px 76px;overflow-y:auto}.hero,.two,.three{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.decisions{grid-template-columns:1fr 1fr}.run{grid-template-columns:80px 1fr}.run span{grid-column:2;text-align:left}.meta{display:none}}
+    @media(max-width:520px){.decisions{grid-template-columns:1fr}h1{font-size:48px}.brand span{display:none}.notes{left:12px;bottom:64px;max-width:calc(100vw - 24px)}}
+    @media print{body{overflow:visible;background:#fff;color:#111}.deck{height:auto;overflow:visible}.slide{position:relative;opacity:1;transform:none;pointer-events:auto;min-height:100vh;page-break-after:always;background:#fff;color:#111}.card,.decision,.run{box-shadow:none;background:#f6f3ef;border-color:#ddd}.controls,.notes{display:none!important}.lead,.muted,.run span,.decision small{color:#333}}
   </style>
 </head>
 <body>
-<div class="deck" id="deck" aria-live="polite">
-
-  <section class="slide active" data-note="Start direkt mit dem Entscheidungsziel: Kein Grundsatzreferat. In 5 Minuten zeigen, was bereits vorbereitet ist und welche fünf Freigaben heute gebraucht werden.">
-    <div class="topbar"><div class="brand"><img src="assets/frequenzwechsel-mark.svg" alt=""><span><b>FRS Frequenzwechsel</b>Plenum Pitch</span></div><div class="meta">07.10.2026 · 19:30 · Freies Radio Stuttgart</div></div>
-    <div class="frame hero-grid">
-      <div>
-        <p class="eyebrow">ENTSCHEIDUNGSVORLAGE · EINMALIGES SPECIAL</p>
-        <h1>Vier Stunden.<br><span class="accent">Drei DJs.</span><br>Vinyl.</h1>
-        <p class="lead">Ein einmaliges elektronisches DJ-Special für FRS – klar begrenzt, technisch planbar und redaktionell anschlussfähig.</p>
-        <div class="signal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      </div>
-      <div class="card orange">
-        <p class="eyebrow" style="color:#fff4eb">HEUTE BRAUCHE ICH</p>
-        <div class="big-number">5</div>
-        <h3>konkrete Entscheidungen</h3>
-        <p style="margin-bottom:0;line-height:1.55">Redaktion · Sendeplatz · Dauer · Technik · nächste Zuständigkeit.</p>
-      </div>
-    </div>
-    <div class="footer"><span>FRS Frequenzwechsel · keine offizielle FRS-Website</span><div class="progress"><i></i></div><span>01 / 08</span></div>
+<div class="deck" id="deck">
+  <section class="slide active" data-note="In einem Satz starten: Conny hat das Thema fürs Plenum vorgeschlagen. Ich möchte heute keinen Dauer-Sendeplatz beantragen, sondern einen klar begrenzten Pilot mit drei DJs und Vinyl organisieren.">
+    <div class="top"><div class="brand"><img src="assets/frequenzwechsel-mark.svg" alt=""><span><b>FRS Frequenzwechsel</b>Plenum-Pitch</span></div><div class="meta">07.10.2026 · 19:30 · Freies Radio Stuttgart</div></div>
+    <div class="frame hero"><div><p class="eyebrow">ENTSCHEIDUNGSVORLAGE · EINMALIGES SPECIAL</p><h1>Vier Stunden.<br><span class="accent">Drei DJs.</span><br>Vinyl.</h1><p class="lead">Ein begrenzter elektronischer Pilot: vorbereitet, technisch prüfbar und mit klarer redaktioneller Zuständigkeit.</p></div><div class="card hot"><p class="eyebrow" style="color:#fff4eb">ZIEL FÜR HEUTE</p><div class="big">5</div><h3>Entscheidungen</h3><p style="margin-bottom:0">Redaktion · Sendeplatz · Dauer · Technik · Owner.</p></div></div>
+    <div class="footer"><span>FRS Frequenzwechsel · Pilotvorschlag</span><div class="progress"><i></i></div><span>01 / 07</span></div>
   </section>
 
-  <section class="slide" data-note="Den Scope bewusst klein halten: einmalige Sendung, kein Anspruch auf feste Reihe. Das nimmt organisatorischen Widerstand raus und macht eine Pilotfreigabe leichter.">
-    <div class="topbar"><div class="brand"><img src="assets/frequenzwechsel-mark.svg" alt=""><span><b>FRS Frequenzwechsel</b>Format</span></div><div class="meta">Scope zuerst klären</div></div>
-    <div class="frame">
-      <p class="eyebrow">01 · FORMAT</p>
-      <h2>Kein Dauerformat erzwingen.<br><span class="accent">Ein sauberer Pilot.</span></h2>
-      <div class="statline">
-        <div class="stat"><strong>1×</strong><span>einmaliges Special</span></div>
-        <div class="stat"><strong>≈ 4 h</strong><span>Ziel-Dauer am Wochenende</span></div>
-        <div class="stat"><strong>3</strong><span>Vinyl-DJs</span></div>
-        <div class="stat"><strong>90s → heute</strong><span>elektronische Musik</span></div>
-      </div>
-      <div class="two" style="margin-top:24px">
-        <div class="card"><h3>Musikalische Idee</h3><p class="lead" style="font-size:22px">House, Techno, Trance, Electro und Übergänge – dramaturgisch als gemeinsame Nachtfahrt statt drei isolierter Sets.</p></div>
-        <div class="card"><h3>Redaktioneller Rahmen</h3><ul class="clean"><li>kurze Moderation statt Dauer-Talk</li><li>FRS-Kontext und Musikherkunft sichtbar machen</li><li>Musikmeldung / Rechte vor Ausstrahlung klären</li><li>Aufzeichnung nur, wenn redaktionell und rechtlich freigegeben</li></ul></div>
-      </div>
-    </div>
-    <div class="footer"><span><span class="kbd">←</span> <span class="kbd">→</span> navigieren · <span class="kbd">N</span> Notizen</span><div class="progress"><i></i></div><span>02 / 08</span></div>
+  <section class="slide" data-note="Hier nur den bestätigten Stand nennen. Wichtig: FRS hat nicht zugesagt, dass Technik oder Sendeplatz verfügbar sind. Bestätigt ist nur: Plenum ist der richtige Ort zur Vorstellung; für eine dauerhafte Sendung gelten Workshops; ein einmaliges Special kann über eine passende Redaktion laufen.">
+    <div class="top"><div class="brand"><img src="assets/frequenzwechsel-mark.svg" alt=""><span><b>FRS Frequenzwechsel</b>Status</span></div><div class="meta">Stand 06.10.2026</div></div>
+    <div class="frame"><p class="eyebrow">01 · WAS BEREITS GEKLÄRT IST</p><h2>Nicht bei null starten.<br><span class="accent">Der Weg ist eingegrenzt.</span></h2><div class="two"><div class="card ok"><h3>Bestätigt</h3><ul class="clean yes"><li>Conny empfiehlt die Vorstellung im Plenum am 07.10.</li><li>Es geht zunächst um ein einmaliges Special, nicht um eine feste Sendereihe.</li><li>Für ein einmaliges Special ist die Anbindung an eine passende Redaktion ein möglicher Weg.</li><li>Für eine dauerhafte eigene Sendung wären Workshops / Einweisung der nächste Schritt.</li></ul></div><div class="card"><h3>Noch offen</h3><ul class="clean"><li>Welche Redaktion oder verantwortliche Person übernimmt den Rahmen?</li><li>Welcher Sendeplatz ist realistisch?</li><li>Sind ca. vier Stunden möglich?</li><li>Welche Vinyl-Technik ist im Studio tatsächlich verfügbar?</li><li>Wer koordiniert den nächsten verbindlichen Schritt?</li></ul></div></div></div>
+    <div class="footer"><span>Bestätigt ≠ technisch freigegeben</span><div class="progress"><i></i></div><span>02 / 07</span></div>
   </section>
 
-  <section class="slide" data-note="Die drei Personen kurz vorstellen, ohne Biografie. Wichtig: generationenübergreifend, Vinyl-Erfahrung, unterschiedliche musikalische Farben. Du bist Koordination und Schnittstelle zum FRS.">
-    <div class="topbar"><div class="brand"><img src="assets/frequenzwechsel-mark.svg" alt=""><span><b>FRS Frequenzwechsel</b>Team</span></div><div class="meta">3 DJs + 1 Koordination</div></div>
-    <div class="frame">
-      <p class="eyebrow">02 · LINE-UP</p>
-      <h2>Drei Perspektiven.<br>Ein gemeinsamer <span class="accent">Flow.</span></h2>
-      <div class="three">
-        <article class="card person"><div><span class="num">01</span><h3>Cordelia</h3><p>Vinyl-orientierter Einstieg: Atmosphäre, Groove und Aufbau.</p></div><strong>Warm-up / Deep → House</strong></article>
-        <article class="card person"><div><span class="num">02</span><h3>Marc</h3><p>Verdichtung in Richtung Techno, Electro und Club-Dynamik.</p></div><strong>Drive / House → Techno</strong></article>
-        <article class="card person"><div><span class="num">03</span><h3>Gerhard</h3><p>Peak und spätere Nachtfahrt mit härteren, hypnotischen Übergängen.</p></div><strong>Peak / Techno → Trance</strong></article>
-      </div>
-      <div class="fallback"><b>Koordination:</b> Daniel – Abstimmung mit FRS, Ablauf, technische Checkliste, Repository und Dokumentation.</div>
-    </div>
-    <div class="footer"><span>Arbeitstitel: FRS Frequenzwechsel · Vinyl Special</span><div class="progress"><i></i></div><span>03 / 08</span></div>
+  <section class="slide" data-note="Das Format bewusst klein halten. Namen nennen, aber keine langen Biografien. Hauptpunkt: drei unterschiedliche musikalische Farben, ein gemeinsamer Ablauf.">
+    <div class="top"><div class="brand"><img src="assets/frequenzwechsel-mark.svg" alt=""><span><b>FRS Frequenzwechsel</b>Format & Team</span></div><div class="meta">Pilot statt Dauerformat</div></div>
+    <div class="frame"><p class="eyebrow">02 · FORMAT</p><h2>Ein Abend.<br>Ein gemeinsamer <span class="accent">Flow.</span></h2><div class="stats"><div class="stat"><strong>1×</strong><span>einmaliges Special</span></div><div class="stat"><strong>≈ 4 h</strong><span>Zieldauer</span></div><div class="stat"><strong>3</strong><span>Vinyl-DJs</span></div><div class="stat"><strong>90er+</strong><span>elektronische Musik</span></div></div><div class="three people" style="margin-top:22px"><div class="card"><div><span class="person-no">01</span><h3>Cordelia</h3><p class="muted">Atmosphäre, Groove, Deep/House-orientierter Einstieg.</p></div><strong>Warm-up</strong></div><div class="card"><div><span class="person-no">02</span><h3>Marc</h3><p class="muted">Verdichtung Richtung House, Electro und Techno.</p></div><strong>Drive</strong></div><div class="card"><div><span class="person-no">03</span><h3>Gerhard</h3><p class="muted">Spätere Nachtfahrt mit Techno/Trance und hypnotischen Übergängen.</p></div><strong>Peak / Late</strong></div></div></div>
+    <div class="footer"><span>Überwiegend Vinyl · kurze Moderation · kein Dauer-Talk</span><div class="progress"><i></i></div><span>03 / 07</span></div>
   </section>
 
-  <section class="slide" data-note="Dieser Ablauf ist ein Vorschlag, kein starres Korsett. Wichtig ist zu zeigen: 4 Stunden sind strukturiert, Übergaben sind geplant, und es gibt eine 2-Stunden-Fallback-Variante.">
-    <div class="topbar"><div class="brand"><img src="assets/frequenzwechsel-mark.svg" alt=""><span><b>FRS Frequenzwechsel</b>Ablauf</span></div><div class="meta">4-Stunden-Entwurf</div></div>
-    <div class="frame">
-      <p class="eyebrow">03 · RUNDOWN</p>
-      <h2>Vier Stunden – <span class="accent">ohne Leerlauf.</span></h2>
-      <div class="rundown">
-        <div class="run"><time>00:00</time><div><b>Opener + FRS-Kontext</b><p style="margin:5px 0 0;color:var(--muted)">Begrüßung, Konzept, Musikmeldung / Hinweise.</p></div><span>10 min</span></div>
-        <div class="run"><time>00:10</time><div><b>Set 1 · Cordelia</b><p style="margin:5px 0 0;color:var(--muted)">Warm-up und Aufbau.</p></div><span>65 min</span></div>
-        <div class="run"><time>01:15</time><div><b>Set 2 · Marc</b><p style="margin:5px 0 0;color:var(--muted)">House / Electro → Techno.</p></div><span>65 min</span></div>
-        <div class="run"><time>02:20</time><div><b>Set 3 · Gerhard</b><p style="margin:5px 0 0;color:var(--muted)">Peak-Time und Nachtfahrt.</p></div><span>65 min</span></div>
-        <div class="run"><time>03:25</time><div><b>Back-to-back + Outro</b><p style="margin:5px 0 0;color:var(--muted)">Gemeinsamer Abschluss, Credits, Ausblick.</p></div><span>35 min</span></div>
-      </div>
-      <div class="fallback"><b>Fallback:</b> Falls 4 Stunden redaktionell nicht möglich sind, Pilot auf 2 Stunden verdichten – Konzept bleibt intakt.</div>
-    </div>
-    <div class="footer"><span>Zeiten = Planungsentwurf, final nach FRS-Slot</span><div class="progress"><i></i></div><span>04 / 08</span></div>
+  <section class="slide" data-note="Der Ablauf ist ein Vorschlag, kein starres Sendeschema. Er zeigt nur: vier Stunden sind planbar und die Übergaben zwischen den DJs sind berücksichtigt.">
+    <div class="top"><div class="brand"><img src="assets/frequenzwechsel-mark.svg" alt=""><span><b>FRS Frequenzwechsel</b>Ablauf</span></div><div class="meta">240 Minuten planbar</div></div>
+    <div class="frame"><p class="eyebrow">03 · RUNDOWN</p><h2>Vier Stunden ohne<br><span class="accent">Leerlauf.</span></h2><div class="rundown"><div class="run"><time>00:00</time><b>Intro & FRS-Kontext</b><span>15 min</span></div><div class="run"><time>00:15</time><b>Cordelia – Warm-up</b><span>65 min</span></div><div class="run"><time>01:20</time><b>Übergabe / kurze Moderation</b><span>10 min</span></div><div class="run"><time>01:30</time><b>Marc – Drive</b><span>65 min</span></div><div class="run"><time>02:35</time><b>Übergabe / kurze Moderation</b><span>10 min</span></div><div class="run"><time>02:45</time><b>Gerhard – Peak / Late</b><span>65 min</span></div><div class="run"><time>03:50</time><b>Outro / Musikmeldung / Abschluss</b><span>10 min</span></div></div></div>
+    <div class="footer"><span>Fallback: kürzerer Pilot, falls 4 h nicht möglich</span><div class="progress"><i></i></div><span>04 / 07</span></div>
   </section>
 
-  <section class="slide" data-note="Hier nicht behaupten, dass das Equipment vorhanden ist. Genau diese Punkte müssen bestätigt werden. Wenn die Technics fehlen, bringen die DJs nach Abstimmung eigenes Material oder das Konzept wird angepasst.">
-    <div class="topbar"><div class="brand"><img src="assets/frequenzwechsel-mark.svg" alt=""><span><b>FRS Frequenzwechsel</b>Technik</span></div><div class="meta">Was muss vorab geklärt werden?</div></div>
-    <div class="frame tech">
-      <div>
-        <p class="eyebrow">04 · TECHNIK</p>
-        <h2>Vinyl braucht einen<br><span class="accent">klaren Studio-Check.</span></h2>
-        <ul class="clean">
-          <li>2× funktionsfähige Technics 1210 oder vergleichbare Plattenspieler</li>
-          <li>passende Tonabnehmer / Nadeln</li>
-          <li>DJ-Mixer mit geeigneten Phono-Eingängen</li>
-          <li>Studiozugang vor Sendebeginn für Aufbau und Soundcheck</li>
-          <li>eine zuständige Person für Einweisung / technische Freigabe</li>
-          <li>Fallback-Plan, falls einzelne Komponenten selbst mitgebracht werden müssen</li>
-        </ul>
-      </div>
-      <div class="card deck-graphic" aria-label="Abstrakte Plattenspieler-Grafik"><div class="record"></div><div class="tonearm"></div></div>
-    </div>
-    <div class="footer"><span>Keine Annahmen: Verfügbarkeit heute im Plenum klären</span><div class="progress"><i></i></div><span>05 / 08</span></div>
+  <section class="slide" data-note="Nichts als vorhanden behaupten. Ziel ist ein Technik-Owner und ein verbindlicher Soundcheck. Bei fehlender Technik nur nach Abstimmung eigenes Equipment einsetzen.">
+    <div class="top"><div class="brand"><img src="assets/frequenzwechsel-mark.svg" alt=""><span><b>FRS Frequenzwechsel</b>Technik</span></div><div class="meta">Vor Sendetermin verifizieren</div></div>
+    <div class="frame"><p class="eyebrow">04 · TECHNIK</p><h2>Vinyl braucht einen<br><span class="accent">Studio-Check.</span></h2><div class="two"><div class="card"><h3>Benötigt</h3><ul class="clean"><li>2× Technics SL-1210 oder vergleichbare Plattenspieler</li><li>funktionsfähige Tonabnehmer / Nadeln</li><li>DJ-Mixer mit Phono-Eingängen</li><li>Monitoring / Kopfhörer / Pegelcheck</li><li>ausreichend Tischfläche und sichere Verkabelung</li></ul></div><div class="card"><h3>Vorher klären</h3><ul class="clean"><li>Wer bestätigt die vorhandene Technik?</li><li>Wann ist ein kurzer Soundcheck möglich?</li><li>Dürfen bei Bedarf eigene Plattenspieler / Systeme mitgebracht werden?</li><li>Welche Musikmeldung / Dokumentation benötigt FRS?</li><li>Aufzeichnung nur nach redaktioneller und rechtlicher Freigabe.</li></ul></div></div></div>
+    <div class="footer"><span>Keine Annahmen zur Studioausstattung</span><div class="progress"><i></i></div><span>05 / 07</span></div>
   </section>
 
-  <section class="slide" data-note="Conny hat genau diese drei Wege implizit eröffnet. Empfehlung: A oder B jetzt entscheiden. C ist die Perspektive, falls aus dem Pilot später ein dauerhaftes Format werden soll.">
-    <div class="topbar"><div class="brand"><img src="assets/frequenzwechsel-mark.svg" alt=""><span><b>FRS Frequenzwechsel</b>Redaktion</span></div><div class="meta">Anschluss an bestehende FRS-Struktur</div></div>
-    <div class="frame">
-      <p class="eyebrow">05 · DREI WEGE</p>
-      <h2>Wo hängt das Special<br><span class="accent">redaktionell?</span></h2>
-      <div class="three">
-        <article class="card option recommended"><span class="tag">A · schnellster Weg</span><h3>Gast in bestehender Musikredaktion</h3><p>Eine passende Redaktion lädt das Special ein und übernimmt den redaktionellen Rahmen.</p><strong>+ wenig Strukturaufwand</strong></article>
-        <article class="card option recommended"><span class="tag">B · Pilot</span><h3>Einmaliger Plenum-Slot</h3><p>Das Plenum bestätigt ein begrenztes Special mit klarer technischer und redaktioneller Zuständigkeit.</p><strong>+ eigenständiger Pilot</strong></article>
-        <article class="card option"><span class="tag">C · später</span><h3>Dauerhafte Sendereihe</h3><p>Erst nach Pilot, Workshops und Studioeinweisung als reguläres Format weiterentwickeln.</p><strong>+ langfristige Option</strong></article>
-      </div>
-      <div class="fallback"><b>Vorschlag:</b> Heute A oder B festlegen. C bewusst offenlassen, bis der Pilot ausgewertet ist.</div>
-    </div>
-    <div class="footer"><span>Basis: Rückmeldung des FRS-Büros vom 05.10.2026</span><div class="progress"><i></i></div><span>06 / 08</span></div>
+  <section class="slide" data-note="Empfehlung: zuerst bestehende Redaktion suchen. Wenn das Plenum stattdessen einen eigenständigen Pilot-Slot ermöglicht, ist das ebenfalls gut. Dauerformat heute bewusst nicht entscheiden.">
+    <div class="top"><div class="brand"><img src="assets/frequenzwechsel-mark.svg" alt=""><span><b>FRS Frequenzwechsel</b>Redaktion</span></div><div class="meta">Anschluss an FRS-Struktur</div></div>
+    <div class="frame"><p class="eyebrow">05 · REDAKTIONELLER WEG</p><h2>Ein Pilot braucht<br><span class="accent">einen klaren Rahmen.</span></h2><div class="three"><div class="card ok"><span class="tag">A · bevorzugt</span><h3>Gast bei passender Redaktion</h3><p class="muted">Eine bestehende Redaktion übernimmt den redaktionellen Rahmen und ermöglicht das einmalige Special.</p><strong>Geringster Strukturaufwand</strong></div><div class="card"><span class="tag">B · alternativ</span><h3>Begrenzter Pilot-Slot</h3><p class="muted">Das Plenum benennt eine Zuständigkeit und gibt einen klar abgegrenzten Termin für das Special frei.</p><strong>Eigenständiger Testlauf</strong></div><div class="card"><span class="tag">C · später</span><h3>Dauerhafte Sendereihe</h3><p class="muted">Erst nach Pilot, Auswertung, Workshops und Studioeinweisung separat entscheiden.</p><strong>Heute nicht beantragt</strong></div></div><div class="callout"><b>Vorschlag:</b> Morgen A oder B festlegen. C bewusst offenlassen.</div></div>
+    <div class="footer"><span>Einmaliges Special zuerst · Skalierung später</span><div class="progress"><i></i></div><span>06 / 07</span></div>
   </section>
 
-  <section class="slide" data-note="Hier die Vorarbeit sichtbar machen. Nicht zu technisch werden: Repo, Playlist, Ablauf, Checklisten. Kernaussage: Das Special beginnt nicht bei Null; die Vorbereitung ist reproduzierbar dokumentiert.">
-    <div class="topbar"><div class="brand"><img src="assets/frequenzwechsel-mark.svg" alt=""><span><b>FRS Frequenzwechsel</b>Vorbereitung</span></div><div class="meta">Repository = Arbeitsgrundlage</div></div>
-    <div class="frame">
-      <p class="eyebrow">06 · BEREITS VORBEREITET</p>
-      <h2>Der Pilot startet<br><span class="accent">nicht bei Null.</span></h2>
-      <div class="two">
-        <div class="card">
-          <h3>Repository</h3>
-          <ul class="clean"><li>Sendeleitfaden als Website</li><li>reproduzierbare Playlist-Erzeugung</li><li>Set-Struktur und lokale Audio-Referenzen</li><li>Produktions- und Rechte-Checklisten</li></ul>
-        </div>
-        <div class="card orange">
-          <p class="eyebrow" style="color:#fff4eb">AKTUELLER STAND</p>
-          <div class="statline" style="grid-template-columns:1fr 1fr;margin-top:0">
-            <div class="stat"><strong>28</strong><span style="color:#fff1e7">vorbereitete lokale Titel</span></div>
-            <div class="stat"><strong>145.8</strong><span style="color:#fff1e7">Minuten Material</span></div>
-            <div class="stat"><strong>4</strong><span style="color:#fff1e7">vorbereitete Sets</span></div>
-            <div class="stat"><strong>1</strong><span style="color:#fff1e7">klarer nächster Schritt: Freigabe</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="fallback"><b>Wichtig:</b> Die digitale Auswahl ist redaktionelle Vorbereitung / Fallback. Das angefragte Special bleibt überwiegend vinylbasiert.</div>
-    </div>
-    <div class="footer"><span>Repo: DonMassa84/frs-frequenzwechsel</span><div class="progress"><i></i></div><span>07 / 08</span></div>
-  </section>
-
-  <section class="slide" data-note="Letzte Folie stehen lassen und Punkt für Punkt Entscheidungen einsammeln. Für jeden Punkt Namen und Termin notieren. Ziel: Nicht mit einem offenen 'wir melden uns' rausgehen.">
-    <div class="topbar"><div class="brand"><img src="assets/frequenzwechsel-mark.svg" alt=""><span><b>FRS Frequenzwechsel</b>Entscheidung</span></div><div class="meta">Plenum 07.10.2026</div></div>
-    <div class="frame">
-      <p class="eyebrow">07 · HEUTE FESTZURREN</p>
-      <h2>Fünf Antworten – dann<br><span class="accent">kann produziert werden.</span></h2>
-      <div class="decision-grid">
-        <div class="decision"><span class="n">01</span><b>Welche Redaktion / Person übernimmt?</b><small>Name + Kontakt</small></div>
-        <div class="decision"><span class="n">02</span><b>Welcher Termin / Sendeplatz?</b><small>Wochenende bevorzugt</small></div>
-        <div class="decision"><span class="n">03</span><b>4 Stunden möglich?</b><small>Fallback: 2-Stunden-Pilot</small></div>
-        <div class="decision"><span class="n">04</span><b>Welche Technik ist verfügbar?</b><small>1210 · Mixer · Nadeln · Soundcheck</small></div>
-        <div class="decision"><span class="n">05</span><b>Wer bestätigt den nächsten Schritt bis wann?</b><small>Owner + Datum</small></div>
-      </div>
-      <div class="fallback"><b>Ziel des Abends:</b> ein benannter Owner, ein realistischer Slot und ein verbindlicher Technik-Check – nicht nur eine allgemeine Zustimmung.</div>
-    </div>
-    <div class="footer"><span>Danke · FRS Frequenzwechsel · Vinyl Special</span><div class="progress"><i></i></div><span>08 / 08</span></div>
+  <section class="slide" data-note="Am Ende stoppen und die fünf Antworten einzeln einsammeln. Ziel ist nicht Applaus, sondern Name, Termin, Dauer, Technik-Owner und nächstes Datum.">
+    <div class="top"><div class="brand"><img src="assets/frequenzwechsel-mark.svg" alt=""><span><b>FRS Frequenzwechsel</b>Entscheidung</span></div><div class="meta">Plenum 07.10.2026</div></div>
+    <div class="frame"><p class="eyebrow">06 · HEUTE FESTZURREN</p><h2>Fünf Antworten – dann<br><span class="accent">geht es in die Produktion.</span></h2><div class="decisions"><div class="decision"><span class="n">01</span><b>Welche Redaktion / Person?</b><small>Name + Kontakt</small></div><div class="decision"><span class="n">02</span><b>Welcher Termin / Sendeplatz?</b><small>Wochenende bevorzugt</small></div><div class="decision"><span class="n">03</span><b>Welche Dauer?</b><small>Ziel 4 h · Fallback kürzer</small></div><div class="decision"><span class="n">04</span><b>Welche Technik?</b><small>1210 · Mixer · Nadeln · Soundcheck</small></div><div class="decision"><span class="n">05</span><b>Wer macht was bis wann?</b><small>Owner + nächster Termin</small></div></div><div class="callout"><b>Erfolgskriterium des Plenums:</b> Nach der Vorstellung gibt es einen konkreten Ansprechpartner und einen verbindlichen nächsten Schritt.</div></div>
+    <div class="footer"><span>Daniel Massa · FRS Frequenzwechsel</span><div class="progress"><i></i></div><span>07 / 07</span></div>
   </section>
 </div>
-
-<div class="notes" id="notes"><b>Sprecherhinweis:</b> <span id="noteText"></span></div>
-<div class="controls" aria-label="Präsentationsnavigation">
-  <button id="prev" aria-label="Vorherige Folie">←</button>
-  <button id="next" aria-label="Nächste Folie">→</button>
-</div>
-
+<div class="notes" id="notes"></div>
+<div class="controls"><button id="prev" aria-label="Zurück">←</button><button id="next" aria-label="Weiter">→</button><button id="noteBtn" aria-label="Notizen">N</button></div>
 <script>
-(() => {
-  const slides=[...document.querySelectorAll('.slide')];
-  const noteBox=document.getElementById('notes');
-  const noteText=document.getElementById('noteText');
-  let idx=Math.max(0,Math.min(slides.length-1,(parseInt(location.hash.replace('#',''),10)||1)-1));
-  let notes=false;
-  function render(){
-    slides.forEach((s,i)=>s.classList.toggle('active',i===idx));
-    slides.forEach((s,i)=>{const p=s.querySelector('.progress i');if(p)p.style.width=((idx+1)/slides.length*100)+'%';});
-    location.hash=String(idx+1);
-    noteText.textContent=slides[idx].dataset.note||'';
-    noteBox.classList.toggle('show',notes);
-    document.title=`FRS Frequenzwechsel · Plenum ${idx+1}/${slides.length}`;
-  }
-  function go(delta){idx=Math.max(0,Math.min(slides.length-1,idx+delta));render();}
-  document.getElementById('prev').addEventListener('click',()=>go(-1));
-  document.getElementById('next').addEventListener('click',()=>go(1));
-  addEventListener('keydown',e=>{
-    if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();go(1)}
-    if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();go(-1)}
-    if(e.key.toLowerCase()==='n'){notes=!notes;render()}
-    if(e.key==='Home'){idx=0;render()}
-    if(e.key==='End'){idx=slides.length-1;render()}
-  });
-  let x0=null;
-  addEventListener('touchstart',e=>{x0=e.changedTouches[0].clientX},{passive:true});
-  addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>55)go(dx<0?1:-1);x0=null},{passive:true});
-  addEventListener('hashchange',()=>{const n=parseInt(location.hash.replace('#',''),10);if(n>=1&&n<=slides.length){idx=n-1;render()}});
-  render();
-})();
+  const slides=[...document.querySelectorAll('.slide')], progress=[...document.querySelectorAll('.progress i')], notes=document.getElementById('notes');
+  let index=0, notesOn=false;
+  function show(n){index=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('active',i===index));progress.forEach((p)=>p.style.width=((index+1)/slides.length*100)+'%');notes.innerHTML='<b>Sprecherhinweis:</b> '+(slides[index].dataset.note||'');notes.classList.toggle('show',notesOn)}
+  document.getElementById('prev').onclick=()=>show(index-1);document.getElementById('next').onclick=()=>show(index+1);document.getElementById('noteBtn').onclick=()=>{notesOn=!notesOn;show(index)};
+  addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(index+1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(index-1)}if(e.key.toLowerCase()==='n'){notesOn=!notesOn;show(index)}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1)});show(0);
 </script>
 </body>
 </html>
