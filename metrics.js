@@ -1,6 +1,6 @@
 (() => {
   const view = document.currentScript.dataset.view;
-  const supportedHosts = ['donmassa84.github.io', 'frs-frequenzwechsel.derboss.chatgpt.site'];
+  const supportedHosts = ['nachhall.pntr.dev', 'donmassa84.github.io', 'frs-frequenzwechsel.derboss.chatgpt.site'];
   if (!supportedHosts.includes(location.hostname)) return;
   if (navigator.globalPrivacyControl || navigator.doNotTrack === '1') return;
 
