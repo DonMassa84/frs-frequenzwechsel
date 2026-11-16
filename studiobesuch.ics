@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Frequenzwechsel//Studiobesuch//DE
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:studiobesuch-20261118@frs-frequenzwechsel
+DTSTAMP:20261116T150000Z
+DTSTART:20261118T120000Z
+DTEND:20261118T170000Z
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+SUMMARY:Frequenzwechsel – möglicher Studiobesuch
+LOCATION:Stöckachstraße 16a\, 70190 Stuttgart
+DESCRIPTION:Vorgeschlagenes Zeitfenster.\nTreffzeit mit der Crew abstimmen.
+ \nEingang in der Heinrich-Baumann-Straße.
+END:VEVENT
+END:VCALENDAR
