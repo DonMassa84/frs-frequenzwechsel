@@ -7,3 +7,10 @@ section[id]{scroll-margin-top:78px}
 .workshop-list{display:grid;gap:12px;padding-left:20px}
 footer a{color:inherit}
 .set:focus-visible,.menu:focus-visible,a:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+
+.route-actions{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.route-actions .button{display:inline-flex;align-items:center;min-height:44px;padding:9px 12px;text-decoration:none}
+.route-actions .button:first-child{background:var(--orange);border-color:var(--orange);color:#21120b}
+.route-actions .button:hover{text-decoration:underline}
+.visit-links{display:grid;gap:6px;margin:14px 0 0;padding:0;list-style:none;font-size:.875rem}
+.reach-note p{margin:16px 0 0;color:var(--muted)}
