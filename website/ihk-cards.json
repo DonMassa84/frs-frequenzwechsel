@@ -1,0 +1,449 @@
+{
+  "version": "2026-11-17",
+  "title": "IHK FRS-Beratung · § 12 IT-Projektleiter",
+  "privacy": "public_exam_material_only",
+  "count": 63,
+  "cards": [
+    {
+      "id": "frs001",
+      "section": "Projekt",
+      "q": "Welches Projekt wurde eingereicht?",
+      "a": "Konzeption und prototypische Umsetzung eines plattformunabhängigen Sendungsarchivs beim Freien Radio Stuttgart.",
+      "priority": 1
+    },
+    {
+      "id": "frs002",
+      "section": "Projekt",
+      "q": "Was ist das Kernproblem?",
+      "a": "Gewachsene Datei- und Webstrukturen erschweren konsistente Zuordnung, Wiederverwendung und langfristige Migration von Sendungen und Metadaten.",
+      "priority": 1
+    },
+    {
+      "id": "frs003",
+      "section": "Projekt",
+      "q": "Was ist dein betriebliches Ziel?",
+      "a": "Eine nachvollziehbare Entscheidungsgrundlage und ein testbarer Archivpilot für einen abgestimmten Teilbestand schaffen.",
+      "priority": 1
+    },
+    {
+      "id": "frs004",
+      "section": "Projekt",
+      "q": "Was ist explizit nicht im Scope?",
+      "a": "Keine produktive Vollmigration, kein Website-Relaunch und keine vollständige Einführung von AURA.",
+      "priority": 1
+    },
+    {
+      "id": "frs005",
+      "section": "Projekt",
+      "q": "Worin liegt der Nutzen für das FRS?",
+      "a": "Systemunabhängige Metadaten, bessere Portabilität, weniger manuelle Zuordnungsfehler und ein bewertbarer Weg für spätere Migrationen.",
+      "priority": 1
+    },
+    {
+      "id": "frs006",
+      "section": "Projekt",
+      "q": "Ist die Ausgangslage schon vollständig bestätigt?",
+      "a": "Nein. Konkrete Bestände, Schnittstellen, Datenqualität und Rechte werden in der Ist-Analyse validiert.",
+      "priority": 1
+    },
+    {
+      "id": "frs007",
+      "section": "Projekt",
+      "q": "Welcher Aufwand ist eingereicht?",
+      "a": "70 Stunden eigener Planaufwand über ungefähr 13 Wochen. Das sind Planwerte, keine bereits erbrachten Prüfungsstunden.",
+      "priority": 1
+    },
+    {
+      "id": "frs008",
+      "section": "Projekt",
+      "q": "Was ist dein erster Meilenstein?",
+      "a": "Projektauftrag und Stakeholder klären, Ist-Analyse durchführen und Anforderungen samt Abnahmekriterien abstimmen.",
+      "priority": 1
+    },
+    {
+      "id": "frs009",
+      "section": "Projekt",
+      "q": "Wie formulierst du ein SMART-Ziel ohne erfundene Kennzahlen?",
+      "a": "Ein abgegrenzter Teilbestand wird im vereinbarten Zeitraum anhand vorab definierter Vollständigkeits- und Qualitätskennzahlen geprüft.",
+      "priority": 1
+    },
+    {
+      "id": "frs010",
+      "section": "Projekt",
+      "q": "Was unterscheidet Pilot und Produktivbetrieb?",
+      "a": "Der Pilot überprüft Machbarkeit und Qualität kontrolliert; Produktivfreigabe und Gesamtmigration sind gesonderte Entscheidungen.",
+      "priority": 1
+    },
+    {
+      "id": "frs011",
+      "section": "§ 12",
+      "q": "Warum ist dies ein IT-Projektleiterprojekt?",
+      "a": "Ich plane, vergleiche Alternativen, koordiniere Beteiligte, berate Entscheidungsträger und steuere Aufwand, Termine, Risiken und Qualität.",
+      "priority": 1
+    },
+    {
+      "id": "frs012",
+      "section": "§ 12",
+      "q": "Was fordert § 12 im Kern?",
+      "a": "Ein praxisrelevantes IT-Projekt planen, durchführen und dokumentieren sowie Entscheidungen, Ressourcen, Risiken und Steuerung analytisch bewerten.",
+      "priority": 1
+    },
+    {
+      "id": "frs013",
+      "section": "§ 12",
+      "q": "Welche Rolle spielen Alternativen nach § 12?",
+      "a": "Ich muss technisch und wirtschaftlich begründete Handlungsalternativen untersuchen, nicht nur eine vorab festgelegte Lösung implementieren.",
+      "priority": 1
+    },
+    {
+      "id": "frs014",
+      "section": "§ 12",
+      "q": "Wie belegst du Leitung statt Coding?",
+      "a": "Mit Projektauftrag, RACI, Arbeitspaketen, Freigabeprotokollen, Statusberichten, Risikoregister, Soll-Ist-Vergleichen und Abnahme.",
+      "priority": 1
+    },
+    {
+      "id": "frs015",
+      "section": "§ 12",
+      "q": "Wie belegst du Beratung von Entscheidungsträgern?",
+      "a": "Ich bereite eine gewichtete Entscheidungsvorlage vor, erläutere Konsequenzen und hole die Freigabe beim FRS-Auftraggeber ein.",
+      "priority": 1
+    },
+    {
+      "id": "frs016",
+      "section": "§ 12",
+      "q": "Wie belegst du Personalplanung?",
+      "a": "Ich dokumentiere Rollen, Verfügbarkeit, Qualifikationsbedarf, Abstimmungswege und Verantwortlichkeiten der beteiligten FRS-Funktionen.",
+      "priority": 1
+    },
+    {
+      "id": "frs017",
+      "section": "§ 12",
+      "q": "Was bedeutet das Beratungsgespräch?",
+      "a": "Der Ausschuss prüft den Projektvorschlag und vereinbart Umfang, Arbeiten, Dokumentation und Abgabe; das Thema ist vorher nicht freigegeben.",
+      "priority": 1
+    },
+    {
+      "id": "frs018",
+      "section": "§ 12",
+      "q": "Was musst du am 20.11. erreichen?",
+      "a": "Eine fachlich tragfähige, klar abgegrenzte Zielvereinbarung für dein FRS-Pilotprojekt.",
+      "priority": 1
+    },
+    {
+      "id": "frs019",
+      "section": "Alternativen",
+      "q": "Welche drei Lösungswege prüfst du?",
+      "a": "A: Drupal-Erweiterung. B: AURA-orientierte Integration. C: plattformneutraler Archiv- oder Migrationsdienst.",
+      "priority": 1
+    },
+    {
+      "id": "frs020",
+      "section": "Alternativen",
+      "q": "Ist Alternative C bereits beschlossen?",
+      "a": "Nein. Die technische Auswahl erfolgt erst nach Anforderungsanalyse, dokumentierter Bewertung und Freigabe.",
+      "priority": 1
+    },
+    {
+      "id": "frs021",
+      "section": "Alternativen",
+      "q": "Worin liegt ein Vorteil von Drupal?",
+      "a": "Vorhandene Strukturen können weitergenutzt werden; Grenzen bei Kopplung, Datenportabilität und Wartung müssen geprüft werden.",
+      "priority": 2
+    },
+    {
+      "id": "frs022",
+      "section": "Alternativen",
+      "q": "Worin liegt ein Vorteil von AURA?",
+      "a": "Eine radioorientierte Integration kann fachliche Abläufe unterstützen; Integrationsaufwand und Abhängigkeiten müssen geprüft werden.",
+      "priority": 2
+    },
+    {
+      "id": "frs023",
+      "section": "Alternativen",
+      "q": "Worin liegt ein Vorteil eines neutralen Dienstes?",
+      "a": "Datenportabilität und austauschbare Schnittstellen können erleichtert werden; zusätzlicher Betriebsaufwand muss bewertet werden.",
+      "priority": 2
+    },
+    {
+      "id": "frs024",
+      "section": "Alternativen",
+      "q": "Welche Kriterien nutzt die Nutzwertanalyse?",
+      "a": "Funktionsabdeckung, Integrationsfähigkeit, Portabilität, Wartbarkeit, Datensicherheit und organisatorische Umsetzbarkeit.",
+      "priority": 1
+    },
+    {
+      "id": "frs025",
+      "section": "Alternativen",
+      "q": "Wie ergänzt du die Nutzwertanalyse?",
+      "a": "Mit einer Wirtschaftlichkeitsbetrachtung aus Einmalaufwand, laufendem Aufwand, Personalressourcen und Risiken.",
+      "priority": 1
+    },
+    {
+      "id": "frs026",
+      "section": "Alternativen",
+      "q": "Was ist, wenn eine Alternative technisch glänzt, aber teuer ist?",
+      "a": "Ich stelle Zielerfüllung, Gesamtaufwand und Risiken transparent gegenüber und begründe die Empfehlung am betrieblichen Nutzen.",
+      "priority": 2
+    },
+    {
+      "id": "frs027",
+      "section": "Steuerung",
+      "q": "Wie sind 70 Stunden aufgeteilt?",
+      "a": "10 Stunden Ist-Analyse, 14 Stunden Konzept, 24 Stunden Pilot, 10 Stunden Test, 12 Stunden Dokumentation und Abschluss.",
+      "priority": 1
+    },
+    {
+      "id": "frs028",
+      "section": "Steuerung",
+      "q": "Wie kontrollierst du Zeit?",
+      "a": "Mit Projektstrukturplan, Meilensteinen, Soll-Ist-Aufwand und Eskalation von Abweichungen.",
+      "priority": 1
+    },
+    {
+      "id": "frs029",
+      "section": "Steuerung",
+      "q": "Wie kontrollierst du Qualität?",
+      "a": "Mit festgelegten Testfällen, Metadatenvalidierung, Fehlerprotokoll, Retest und dokumentierter Abnahmeentscheidung.",
+      "priority": 1
+    },
+    {
+      "id": "frs030",
+      "section": "Steuerung",
+      "q": "Wie kontrollierst du Kosten?",
+      "a": "Geplanten Eigenaufwand, Infrastrukturaufwand und laufende Kosten erfassen, laufend gegen die Planung prüfen und Abweichungen bewerten.",
+      "priority": 1
+    },
+    {
+      "id": "frs031",
+      "section": "Steuerung",
+      "q": "Gibt es bereits ein genehmigtes Budget?",
+      "a": "Ein konkretes freigegebenes Budget ist nicht belegt. Ich kläre Kostenrahmen und Entscheidungsbefugnisse vor der Umsetzung.",
+      "priority": 1
+    },
+    {
+      "id": "frs032",
+      "section": "Steuerung",
+      "q": "Was machst du bei Terminverzug?",
+      "a": "Ursache analysieren, Auswirkungen quantifizieren, Gegenmaßnahmen oder Scope-Anpassung bewerten und die Änderung freigeben lassen.",
+      "priority": 1
+    },
+    {
+      "id": "frs033",
+      "section": "Steuerung",
+      "q": "Was machst du bei Qualitätsmängeln?",
+      "a": "Fehler klassifizieren, Ursachen eingrenzen, Mapping oder Validierungsregeln korrigieren und einen dokumentierten Retest ausführen.",
+      "priority": 1
+    },
+    {
+      "id": "frs034",
+      "section": "Steuerung",
+      "q": "Welche fünf Projektphasen hast du geplant?",
+      "a": "Initialisierung und Ist-Analyse, Lösungsbewertung, Pilotumsetzung, Test und Qualitätssicherung, Dokumentation und Abschluss.",
+      "priority": 1
+    },
+    {
+      "id": "frs035",
+      "section": "Daten",
+      "q": "Was ist das Metadatenmodell?",
+      "a": "Eine definierte Struktur für Sendereihe, Episode, Medienobjekt, Beziehungen, Quellen und Nachvollziehbarkeit.",
+      "priority": 2
+    },
+    {
+      "id": "frs036",
+      "section": "Daten",
+      "q": "Warum persistente Identifikatoren?",
+      "a": "Sie verknüpfen Sendungen und Medienobjekte stabil, unabhängig von Dateinamen und späterer Zielplattform.",
+      "priority": 1
+    },
+    {
+      "id": "frs037",
+      "section": "Daten",
+      "q": "Wie gehst du mit Dubletten um?",
+      "a": "Mögliche Dubletten anhand nachvollziehbarer Regeln und Prüfsummen erkennen, protokollieren und vor Zusammenführung prüfen.",
+      "priority": 2
+    },
+    {
+      "id": "frs038",
+      "section": "Daten",
+      "q": "Wie sicherst du Datenintegrität?",
+      "a": "Mit Prüfsummen, referenzieller Validierung, Versionsnachweis und reproduzierbaren Import- und Exporttests.",
+      "priority": 1
+    },
+    {
+      "id": "frs039",
+      "section": "Daten",
+      "q": "Was ist bei unbekannten Quelldaten zu tun?",
+      "a": "Zuerst Feldschema, Vollständigkeit, Formate und Eigentums- beziehungsweise Nutzungsrechte erheben; keine erfundenen Bestandszahlen nennen.",
+      "priority": 1
+    },
+    {
+      "id": "frs040",
+      "section": "Daten",
+      "q": "Wie sehen Abnahmekriterien aus?",
+      "a": "Vereinbarte Testfälle müssen reproduzierbar bestehen; Metadatenzuordnung, Vollständigkeit und Fehlerbehandlung werden dokumentiert.",
+      "priority": 1
+    },
+    {
+      "id": "frs041",
+      "section": "Risiken",
+      "q": "Nenne drei wesentliche Risiken.",
+      "a": "Unzureichende Datenqualität, unklare Rechte oder Zugriffe sowie Schnittstellen- und Ressourcenrisiken.",
+      "priority": 1
+    },
+    {
+      "id": "frs042",
+      "section": "Risiken",
+      "q": "Wie steuerst du Risiken?",
+      "a": "Eintrittswahrscheinlichkeit und Auswirkung bewerten, Maßnahmen und Verantwortliche festlegen, Reststatus regelmäßig prüfen.",
+      "priority": 1
+    },
+    {
+      "id": "frs043",
+      "section": "Risiken",
+      "q": "Was gilt für personenbezogene Daten?",
+      "a": "Datensparsamkeit, Zweckbindung, Zugriffskontrolle und Rechtsgrundlage prüfen; Testbestände nach Freigabe auswählen.",
+      "priority": 1
+    },
+    {
+      "id": "frs044",
+      "section": "Risiken",
+      "q": "Wer entscheidet über die Umsetzung?",
+      "a": "Der zuständige FRS-Auftraggeber. Ich bereite Optionen und Empfehlungen vor und dokumentiere die Freigabe.",
+      "priority": 1
+    },
+    {
+      "id": "frs045",
+      "section": "Stakeholder",
+      "q": "Wer sind deine Stakeholder?",
+      "a": "FRS-Vorstand als Entscheidungsebene, IT und Website, Redaktion, Coach, Projektleitung und Prüfungsausschuss.",
+      "priority": 1
+    },
+    {
+      "id": "frs046",
+      "section": "Stakeholder",
+      "q": "Welche Rolle hat Roman?",
+      "a": "Er ist als fachlicher IT-Ansprechpartner vorgesehen; formale Coach-Zuständigkeit und Beteiligung sind mit dem FRS zu klären.",
+      "priority": 1
+    },
+    {
+      "id": "frs047",
+      "section": "Stakeholder",
+      "q": "Ist die Coach-Rolle abschließend geklärt?",
+      "a": "Die IHK hat die Unterlagen als eingegangen bestätigt; konkrete operative Zuständigkeiten prüfe ich für die Zielvereinbarung.",
+      "priority": 2
+    },
+    {
+      "id": "frs048",
+      "section": "Stakeholder",
+      "q": "Wie vermeidest du Widerstand der Redaktion?",
+      "a": "Anforderungen früh einholen, Pilotänderungen begrenzen, Feedback integrieren und Nutzen sowie Auswirkungen transparent kommunizieren.",
+      "priority": 2
+    },
+    {
+      "id": "frs049",
+      "section": "Einwände",
+      "q": "Warum kein vollständiger Archiv-Relaunch?",
+      "a": "Er würde Ressourcen- und Terminrahmen sprengen. Ein kontrollierter Pilot liefert belastbare Entscheidungsgrundlagen.",
+      "priority": 1
+    },
+    {
+      "id": "frs050",
+      "section": "Einwände",
+      "q": "Ist das nicht nur ein Softwareprojekt?",
+      "a": "Nein. Das technische Artefakt dient als Nachweis; der Prüfungsschwerpunkt liegt auf Planung, Auswahl, Führung, Steuerung und Abnahme.",
+      "priority": 1
+    },
+    {
+      "id": "frs051",
+      "section": "Einwände",
+      "q": "Was, wenn der Ausschuss den Umfang kritisiert?",
+      "a": "Ich schärfe Projektauftrag, Leitungsaufgaben, messbare Abnahme und einen repräsentativen Teilbestand in der Zielvereinbarung.",
+      "priority": 1
+    },
+    {
+      "id": "frs052",
+      "section": "Einwände",
+      "q": "Warum 70 Stunden statt mehr?",
+      "a": "70 Stunden sind mein geplanter Eigenaufwand. Das Vorhaben wird über Scope, Teilbestand und Arbeitspakete auf diesen Rahmen begrenzt.",
+      "priority": 1
+    },
+    {
+      "id": "frs053",
+      "section": "Einwände",
+      "q": "Was, wenn du die technische Lösung schon kennst?",
+      "a": "Vorarbeiten sind nur Referenz. Die prüfungsrelevante Auswahl erfolgt nach Anforderungserhebung und dokumentierter Entscheidung.",
+      "priority": 1
+    },
+    {
+      "id": "frs054",
+      "section": "Einwände",
+      "q": "Was darfst du nicht behaupten?",
+      "a": "Keine bereits freigegebene Zielvereinbarung, produktive Migration, geprüften Ist-Daten oder tatsächlich geleisteten Projektstunden.",
+      "priority": 1
+    },
+    {
+      "id": "frs055",
+      "section": "Einwände",
+      "q": "Wie reagierst du auf eine schwierige Frage?",
+      "a": "Kurz das Ziel benennen, Vorgehen und Entscheidungskriterium erklären, Steuerung schildern und Unbekanntes als Prüfauftrag markieren.",
+      "priority": 1
+    },
+    {
+      "id": "frs056",
+      "section": "Kommunikation",
+      "q": "Was ist deine 20-Sekunden-Einleitung?",
+      "a": "Ich plane und leite beim FRS einen begrenzten Archivpilot, prüfe drei Alternativen, sichere eine Freigabe und steuere Aufwand, Risiken und Qualität.",
+      "priority": 1
+    },
+    {
+      "id": "frs057",
+      "section": "Kommunikation",
+      "q": "Welcher Satz beendet deine Antwort überzeugend?",
+      "a": "Damit erhält das FRS eine nachvollziehbare Entscheidungsgrundlage statt einer unkontrollierten Vollmigration.",
+      "priority": 2
+    },
+    {
+      "id": "frs058",
+      "section": "Fristen",
+      "q": "Was gilt am Freitag, 20.11.2026?",
+      "a": "Beratungsgespräch online von 10:30 bis 11:00 Uhr; pünktliche Teilnahme hat oberste Priorität.",
+      "priority": 1
+    },
+    {
+      "id": "frs059",
+      "section": "Fristen",
+      "q": "Was kann am 23.11.2026 erforderlich werden?",
+      "a": "Bei fehlender Freigabefähigkeit könnte ein überarbeiteter Projektvorschlag zur erneuten Vorlage nötig sein.",
+      "priority": 1
+    },
+    {
+      "id": "frs060",
+      "section": "Fristen",
+      "q": "Was ist der späteste Abgabetermin laut IHK-Mail?",
+      "a": "Die PDF-Projektarbeit muss bei Freigabe spätestens am 30.04.2027 bei der IHK eingehen; zwei Druckexemplare folgen zeitnah.",
+      "priority": 1
+    },
+    {
+      "id": "frs061",
+      "section": "Fristen",
+      "q": "Wann muss das Altverfahren abgeschlossen sein?",
+      "a": "Nach IHK-Mitteilung bis einschließlich 01.11.2027.",
+      "priority": 1
+    },
+    {
+      "id": "frs062",
+      "section": "Transfer",
+      "q": "Was schreibst du nach jeder Lernrunde?",
+      "a": "Situation, SMART-Ziel, Stakeholder, Ursachen, A/B/C, Bewertung, Entscheidung, Umsetzung, KPIs und nachhaltige Übergabe.",
+      "priority": 2
+    },
+    {
+      "id": "frs063",
+      "section": "Transfer",
+      "q": "Wie lernst du trotz Endlosschleife aktiv?",
+      "a": "Jede Stunde eine Prüferfrage laut ohne Vorlage beantworten und in 3 bis 5 Sätzen schriftlich verdichten.",
+      "priority": 1
+    }
+  ]
+}
