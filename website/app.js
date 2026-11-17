@@ -56,7 +56,6 @@ buttons.forEach(button => button.addEventListener('click', () => {
   if (localPreview) loadPreview(button);
 }));
 
-const handoffAddress = 'roman@coloradio.org';
 const supportUrl = 'https://www.freies-radio.de/foerderverein';
 const chatForm = document.querySelector('#chat-form');
 const chatLog = document.querySelector('#chat-log');
@@ -67,7 +66,7 @@ const guestForm = document.querySelector('#guest-form');
 const guestStatus = document.querySelector('#guest-status');
 
 function openMail(subject, body) {
-  window.location.href = `mailto:${handoffAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 chatForm?.addEventListener('submit', event => {
@@ -79,20 +78,27 @@ chatForm?.addEventListener('submit', event => {
   bubble.innerHTML = `<b>Du</b><p>${message.replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[char]))}</p>`;
   chatLog.appendChild(bubble);
   chatMessage.value = '';
-  chatStatus.textContent = 'Nachricht lokal ergänzt. Übergabe an die Crew ist bereit.';
+  chatStatus.textContent = 'Nachricht zum Entwurf hinzugefügt.';
   chatLog.scrollTop = chatLog.scrollHeight;
 });
 
 handoffButton?.addEventListener('click', () => {
-  const messages = [...chatLog.querySelectorAll('.chat-bubble p')].map(item => item.textContent).join('\n');
-  openMail('Frequenzwechsel · Handoff aus dem Live Chat', `Hallo Roman / Redaktion,\n\nich möchte mein Anliegen aus dem Nachhall-Live-Chat übergeben.\n\nChat-Verlauf:\n${messages}\n\nViele Grüße`);
+  const parts = [...chatLog.querySelectorAll('.chat-bubble.you p')].map(item => item.textContent);
+  const unsaved = chatMessage.value.trim();
+  if (unsaved) parts.push(unsaved);
+  if (!parts.length) {
+    chatStatus.textContent = 'Schreib zuerst eine Nachricht für die Redaktion.';
+    chatMessage.focus();
+    return;
+  }
+  openMail('Frequenzwechsel · Anfrage', `Hallo Frequenzwechsel-Team,\n\n${parts.join('\n\n')}\n\nViele Grüße`);
 });
 
 guestForm?.addEventListener('submit', event => {
   event.preventDefault();
   const form = new FormData(guestForm);
   const body = [
-    'Hallo Roman / Redaktion,', '',
+    'Hallo Frequenzwechsel-Team,', '',
     'ich möchte mich als Gast-DJ für Frequenzwechsel bewerben.', '',
     `Name / DJ-Name: ${form.get('name')}`,
     `E-Mail: ${form.get('email')}`,
@@ -102,7 +108,7 @@ guestForm?.addEventListener('submit', event => {
     'Erfahrung und Idee:', String(form.get('message')), '',
     'Viele Grüße'
   ].join('\n');
-  guestStatus.textContent = 'Bewerbung vorbereitet. Dein E-Mail-Programm öffnet sich jetzt; du entscheidest selbst über den Versand.';
+  guestStatus.textContent = 'Dein E-Mail-Entwurf ist vorbereitet. Ergänze die Empfängeradresse im E-Mail-Programm.';
   openMail('Gast-DJ-Bewerbung · Frequenzwechsel', body);
 });
 

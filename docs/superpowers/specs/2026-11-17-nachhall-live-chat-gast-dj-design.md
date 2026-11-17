@@ -69,7 +69,9 @@ formular prüfen; keine Bewerbung tatsächlich absenden.
 
 ## 10. Nachhaltigkeit
 
-Der Empfänger bleibt als zentrale Konstante in `website/app.js` dokumentiert.
+coloRadio dient als Vorbild. Bis ein Frequenzwechsel-Postfach feststeht, bleiben
+die E-Mail-Entwürfe unadressiert. Für allgemeine Fragen verweist die Seite auf
+die offizielle FRS-Kontaktseite.
 Für einen echten Live-Chat müssen später Anbieter, Backend, Aufbewahrung,
 Einwilligung und Handoff-Ziel separat entschieden und getestet werden.
 
