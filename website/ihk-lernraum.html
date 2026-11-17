@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#101418">
+<meta name="description" content="FRS IHK-Projekttraining: Archivpilot, Projektleitung und § 12 – automatisch wiederholende Lernfragen.">
+<title>FRS Projektwissen · IHK-Lernraum</title>
+<link rel="icon" href="assets/frequenzwechsel-mark.svg" type="image/svg+xml">
+<style>
+:root{color-scheme:dark;--bg:#101418;--card:#24211f;--line:#544139;--fg:#fff8ef;--muted:#d1bbad;--accent:#ff7c40;--good:#a7e3ba;--amber:#ffe1aa}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(850px 600px at 85% 10%,#3b251b,transparent),var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+a{color:var(--accent)}button,select{font:inherit}button{cursor:pointer;border:1px solid #a56f53;border-radius:12px;padding:12px 17px;color:var(--fg);background:#332b27;font-weight:700}button:hover,button:focus-visible{border-color:#ffd7b7;outline-offset:3px}button.primary{background:var(--accent);color:#24130d;border-color:var(--accent)}button.good{border-color:#699d7f;color:var(--good)}button.active{background:#714128}button:disabled{opacity:.6;cursor:not-allowed}
+nav{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:14px max(18px,4vw);border-bottom:1px solid #493328;background:#101418cc}nav b{letter-spacing:.04em}nav span{color:var(--accent)}nav a{font-size:13px;color:var(--muted);text-decoration:none}
+.layout{width:min(1400px,calc(100% - 32px));margin:24px auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,320px);gap:18px}
+.stage{background:linear-gradient(145deg,#24211f,#191e23);border:1px solid #685044;border-radius:23px;padding:clamp(22px,4vw,60px);min-height:590px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.stage:before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--accent),#ffcb9a)}
+.eyebrow{color:var(--accent);letter-spacing:.15em;font-size:12px;font-weight:900;text-transform:uppercase}.metarow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}.stage h1{margin:18px 0 8px;font-size:clamp(29px,4.4vw,64px);line-height:1.12;letter-spacing:-.035em}.answer{font-size:clamp(18px,2.1vw,29px);line-height:1.55;color:var(--good);margin-top:20px;max-width:950px}.state{color:var(--muted);font-size:14px}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:40px}.timer{display:flex;align-items:center;gap:16px;margin-top:24px}.digits{font-size:36px;font-variant-numeric:tabular-nums;font-weight:900}.bar{height:9px;background:#463931;border-radius:10px;flex:1;overflow:hidden}.bar>div{height:100%;width:100%;background:var(--accent);transition:width .2s linear}
+.panel{border:1px solid #503b30;border-radius:23px;padding:24px;background:#24211fe8;display:flex;flex-direction:column;gap:14px}h2{font-size:17px;margin:0}.label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.1em}.number{font-size:32px;font-weight:900}hr{border:0;border-top:1px solid #58483f;width:100%;margin:6px 0}.cardlist{list-style:none;padding:0;margin:0;display:grid;gap:10px;color:#e5d5ca;font-size:14px}.cardlist strong{color:var(--accent)}.mini{font-size:12px;color:var(--muted);line-height:1.5}.pill{display:inline-block;border:1px solid #795a47;border-radius:100px;padding:6px 11px;font-size:12px;color:var(--amber)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid2 button{padding:11px 7px}
+@media(max-width:850px){.layout{display:flex;flex-direction:column}.stage{min-height:470px}.panel{min-width:0}nav{flex-wrap:wrap}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<nav><div><span>FRS</span> <b>Projektwissen · IHK-Lernraum</b></div><a href="index.html#start">← Frequenzwechsel-Portal</a></nav>
+<div class="layout">
+<main class="stage" aria-live="polite">
+ <div class="metarow"><span class="eyebrow" id="phase">PRÜFUNGSFRAGE</span><span class="pill" id="topic">FRS / § 12</span></div>
+ <h1 id="question">Lade die IHK-Lernkarten …</h1>
+ <div class="answer" id="answer" hidden></div>
+ <div class="state" id="hint">Automatischer Wechsel: 8 Sekunden Frage · 19 Sekunden Musterantwort</div>
+ <div class="timer"><span class="digits" id="clock">08</span><div class="bar"><div id="bar"></div></div><span id="counter">0 / 0</span></div>
+ <div class="controls">
+  <button class="primary" id="play" type="button">Ⅱ Pause</button>
+  <button id="audio" type="button">◖ Audio einschalten</button>
+  <button id="next" type="button">Nächste Frage →</button>
+  <button id="repeat" type="button">↻ Wiederholen</button>
+  <button id="full" type="button">⛶ Vollbild</button>
+ </div>
+</main>
+<aside class="panel">
+ <p class="eyebrow" style="margin:0">PRIO 1 · ZIELVEREINBARUNG</p>
+ <h2>Beratung · 20.11.2026</h2>
+ <p class="mini" style="margin:0">Das Ziel: ein realistisch abgegrenztes FRS-Projekt überzeugend als eigenständige IT-Projektleitung vertreten.</p>
+ <div class="grid2"><div><div class="label">Karten</div><div class="number" id="total">–</div></div><div><div class="label">Runden</div><div class="number" id="round">0</div></div></div>
+ <div class="grid2"><button class="good" id="known">✓ Sicher</button><button id="hard">× Schwer</button></div>
+ <div class="grid2"><div><div class="label">Sicher</div><div class="number" id="knownCount">0</div></div><div><div class="label">Schwer</div><div class="number" id="hardCount">0</div></div></div>
+ <hr>
+ <div class="label">Lernmodus</div>
+ <select id="mode" aria-label="Lernmodus"><option value="priority">PRIO 1 zuerst</option><option value="all">Alle Karten</option><option value="hard">Schwächenfokus</option></select>
+ <div class="label">Zeitsteuerung</div>
+ <select id="speed" aria-label="Lerntempo"><option value="normal">8 s Frage / 19 s Antwort</option><option value="slow">12 s Frage / 30 s Antwort</option><option value="fast">5 s Frage / 13 s Antwort</option></select>
+ <hr>
+ <h2>10 Prüfungsanker</h2>
+ <ol class="cardlist" style="list-style:decimal;margin-left:18px">
+  <li>Situation und betrieblicher Bedarf</li><li>SMART-Ziel und Scope</li><li>Stakeholder und Rollen</li><li>Ursachen und Datenbasis</li><li>Alternativen A / B / C</li><li>Wirtschaftlich und menschlich bewerten</li><li>Entscheidung und Freigabe</li><li>Umsetzung / Ressourcen</li><li>Controlling / Kennzahlen</li><li>Nachhaltigkeit, Rechte und Übergabe</li>
+ </ol>
+ <hr>
+ <p class="mini" id="daily">Tagesrotation wird geladen …</p>
+ <p class="mini"><strong>Aktive Erinnerung:</strong> Nach jeder vollen Runde eine Prüferfrage aus dem Gedächtnis schriftlich beantworten. Passives Hören allein ist keine verlässliche Wissenskontrolle.</p>
+ <p class="mini"><a href="https://www.ihk.de/blueprint/servlet/resource/blob/2105222/677934729c567aeb7f7faaa4c3f1cb4f/it-operative-professionals-verordnung-data.pdf" target="_blank" rel="noreferrer">Rechtsgrundlage: IT-FortbV § 12</a></p>
+ <button id="export" type="button">Lernstand exportieren</button>
+ <p class="mini">Deine Markierungen bleiben nur in diesem Browser. Keine Kontodaten, ärztlichen Nachweise oder vertraulichen IHK-Mails auf dieser Seite.</p>
+</aside>
+</div>
+<script>
+(function(){
+'use strict';
+var $=function(id){return document.getElementById(id);};
+var cards=[],queue=[],idx=0,round=1,phase='q',active=true,audio=false,deadline=0,remaining=8000,dailyIds=[],stats={},runId=null;
+var durations={normal:[8000,19000],slow:[12000,30000],fast:[5000,13000]};
+try{stats=JSON.parse(localStorage.getItem('frs_ihk_marks_v1')||'{}')||{};}catch(e){stats={};}
+var now=new Date();
+var dateKey=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Berlin',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
+function hash(s){var n=2166136261;for(var i=0;i<s.length;i++){n^=s.charCodeAt(i);n=Math.imul(n,16777619);}return n>>>0;}
+function todayOrder(){
+ var mode=$('mode').value;
+ var xs=cards.filter(function(c){return mode!=='hard'||stats[c.id]!==3;});
+ if(!xs.length)xs=cards.slice();
+ xs.sort(function(a,b){
+  function score(c){var mark=stats[c.id]||0;var boost=(dailyIds.indexOf(c.id)>=0?-55:0)+(c.priority===1?-20:0)+(mark===1?-45:mark===2?-15:mark===3?35:0);return boost+(hash(dateKey+':'+round+':'+c.id)%30);}
+  if(mode==='all')return (hash(dateKey+round+a.id)%100)-(hash(dateKey+round+b.id)%100);
+  return score(a)-score(b);
+ });
+ return xs;
+}
+function current(){return queue[idx]||cards[0];}
+function duration(){return durations[$('speed').value]||durations.normal;}
+function setClock(){remaining=duration()[phase==='q'?0:1];deadline=Date.now()+remaining;}
+function speak(s){if(!audio||!('speechSynthesis' in window))return;try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(s);u.lang='de-DE';u.rate=.98;var v=speechSynthesis.getVoices().find(function(x){return x.lang.toLowerCase().indexOf('de')===0;});if(v)u.voice=v;speechSynthesis.speak(u);}catch(e){}}
+function stopVoice(){if('speechSynthesis' in window)try{speechSynthesis.cancel();}catch(e){}}
+function show(){if(!cards.length)return;var c=current();$('phase').textContent=phase==='q'?'PRÜFUNGSFRAGE':'MUSTERANTWORT';$('topic').textContent=c.section+' · '+(c.priority===1?'PRIO 1':'Vertiefung');$('question').textContent=c.q;$('answer').hidden=phase==='q';$('answer').textContent=c.a;$('counter').textContent=(idx+1)+' / '+queue.length;$('round').textContent=String(round);$('hint').textContent=(phase==='q'?'Formuliere deine Antwort, bevor sie erscheint.':'Lies oder höre die Antwort, ohne den Text wortwörtlich auswendig zu lernen.')+(active?' · Autoloop aktiv':' · Pausiert');if(active)speak(phase==='q'?c.q:c.a);updateClock();}
+function updateClock(){var t=active?Math.max(0,deadline-Date.now()):remaining;var d=duration()[phase==='q'?0:1];$('clock').textContent=String(Math.ceil(t/1000)).padStart(2,'0');$('bar').style.width=(100*Math.min(1,t/d))+'%';}
+function change(){stopVoice();if(phase==='q')phase='a';else{phase='q';idx++;if(idx>=queue.length){round++;idx=0;queue=todayOrder();}}setClock();show();}
+function skip(){stopVoice();phase='q';idx++;if(idx>=queue.length){round++;idx=0;queue=todayOrder();}setClock();show();}
+function mark(n){var c=current();stats[c.id]=n;try{localStorage.setItem('frs_ihk_marks_v1',JSON.stringify(stats));}catch(e){}updateStats();if(n===1){$('hint').textContent='Als schwer markiert – diese Frage kommt künftig häufiger.';}else{$('hint').textContent='Als sicher markiert – diese Frage kommt künftig seltener.';}}
+function updateStats(){$('knownCount').textContent=Object.values(stats).filter(function(x){return x===3;}).length;$('hardCount').textContent=Object.values(stats).filter(function(x){return x===1;}).length;}
+function reloadQueue(){idx=0;round=1;phase='q';queue=todayOrder();setClock();show();}
+$('play').onclick=function(){active=!active;if(active){deadline=Date.now()+remaining;this.textContent='Ⅱ Pause';show();}else{remaining=Math.max(0,deadline-Date.now());stopVoice();this.textContent='▶ Weiter';$('hint').textContent='Pausiert';updateClock();}};
+$('audio').onclick=function(){audio=!audio;stopVoice();this.textContent=audio?'◖ Audio AN':'◖ Audio einschalten';this.classList.toggle('active',audio);if(audio){if(!('speechSynthesis' in window)){$('hint').textContent='Diese Browserumgebung unterstützt keine Sprachausgabe.';}else if(active)speak(phase==='q'?current().q:current().a);}};
+$('next').onclick=skip;$('repeat').onclick=function(){phase='q';stopVoice();setClock();show();};
+$('hard').onclick=function(){mark(1);};$('known').onclick=function(){mark(3);};
+$('mode').onchange=reloadQueue;$('speed').onchange=function(){setClock();show();};
+$('full').onclick=function(){if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.();};
+$('export').onclick=function(){var obj={exported_at:new Date().toISOString(),scores:stats};var blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='frs_ihk_lernstand.json';a.click();URL.revokeObjectURL(url);};
+document.addEventListener('keydown',function(e){if(e.target.tagName==='SELECT')return;if(e.code==='Space'){e.preventDefault();$('play').click();}if(e.key==='ArrowRight')skip();if(e.key==='1')mark(1);if(e.key==='3')mark(3);});
+async function init(){
+ try{
+  var r=await fetch('ihk-cards.json',{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);
+  var j=await r.json();cards=(j.cards||[]).filter(function(x){return x.id&&x.q&&x.a;});
+  if(!cards.length)throw Error('Keine gültigen Karten');
+  $('total').textContent=cards.length;
+  try{var dr=await fetch('ihk-daily.json',{cache:'no-store'});if(dr.ok){var plan=await dr.json();if(plan.date===dateKey&&Array.isArray(plan.focus_ids)){dailyIds=plan.focus_ids;$('daily').textContent='Automatische Tagesrotation '+dateKey+' · '+dailyIds.length+' Fokusfragen';}}}catch(e){}
+  if(!dailyIds.length){dailyIds=cards.filter(function(c){return c.priority===1;}).sort(function(a,b){return hash(dateKey+a.id)-hash(dateKey+b.id);}).slice(0,16).map(function(c){return c.id;});$('daily').textContent='Lokale Tagesrotation '+dateKey+' · '+dailyIds.length+' Fokusfragen';}
+  updateStats();queue=todayOrder();setClock();show();
+  runId=setInterval(function(){if(!active)return;if(Date.now()>=deadline)change();else updateClock();},250);
+ }catch(e){$('question').textContent='Lernkarten konnten nicht geladen werden.';$('hint').textContent='Öffne den Lernraum über die veröffentlichte Website, damit ihk-cards.json geladen werden kann. Details: '+e.message;$('play').disabled=true;}
+}
+init();
+})();
+</script>
+</body>
+</html>
