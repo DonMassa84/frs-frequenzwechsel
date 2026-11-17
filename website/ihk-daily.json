@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-17",
+  "focus_ids": [
+    "frs011",
+    "frs012",
+    "frs013",
+    "frs014",
+    "frs015",
+    "frs017",
+    "frs018",
+    "frs019",
+    "frs025",
+    "frs027",
+    "frs029",
+    "frs031",
+    "frs041",
+    "frs050",
+    "frs056",
+    "frs058"
+  ],
+  "mode": "beratung",
+  "method": "reviewed_question_pool_daily_rotation",
+  "note": "Keine erfundenen Prüfungsfragen oder veränderten Quellen; Tagesplan aus festem Fragenpool."
+}
