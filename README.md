@@ -8,11 +8,12 @@ Lokale Musikvorbereitung für eine elektronische Sendung beim Freien Radio Stutt
 
 ## Website & Plenum-Pitch
 
-- `website/index.html` – interaktiver Sendeleitfaden
-- `website/plenum.html` – Präsentation für das FRS-Plenum am 07.10.2026 zum einmaligen Vinyl-DJ-Special
-- Navigation in der Präsentation: Pfeiltasten / PageUp / PageDown; `N` blendet Sprecherhinweise ein
+- `website/index.html` – öffentlicher Sendeleitfaden mit Studio-Termin, Sendekonzept, Voraussetzungen, Workshops und Set-Übersicht
+- `website/plenum.html` – aktualisierter Plenum-Pitch mit Pilotoptionen, DJ-Technik und offenen Entscheidungen (Stand 16.11.2026)
+- [Plenum-Brief vom 07.10.2026](docs/plenum-brief-2026-10-07.md) – ursprünglicher Vorschlag für ein einmaliges Vinyl-Special
+- Navigation in der Präsentation: Pfeiltasten oder PageUp/PageDown. `N` blendet Sprechernotizen ein.
 
-Der Plenum-Pitch ist als eigenständige responsive Website aufgebaut und fokussiert die fünf Entscheidungen, die für den Pilot benötigt werden: redaktionelle Zuständigkeit, Sendeplatz, Dauer, Technik und nächster verbindlicher Schritt.
+Für statisches Hosting ist `website/` das Veröffentlichungsverzeichnis. Für die lokale Audiovorschau im Repository-Root `python3 -m http.server` starten und `http://localhost:8000/website/` öffnen. Die Audiovorschau erscheint bei der Set-Auswahl, wenn die lokalen Playlists vorhanden sind.
 
 ## Inhalt
 
