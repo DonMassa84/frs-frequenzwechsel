@@ -1,0 +1,63 @@
+name: IHK FRS Tagesrotation
+on:
+  schedule:
+    - cron: '25 5 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'website/ihk-cards.json'
+      - '.github/workflows/ihk-daily.yml'
+permissions:
+  contents: write
+concurrency:
+  group: ihk-frs-daily
+  cancel-in-progress: false
+jobs:
+  rotate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Tagesplan aus geprüften Fragen generieren
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python3 - <<'PY'
+          import datetime, json, random
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          root = Path("website")
+          data = json.loads((root / "ihk-cards.json").read_text(encoding="utf-8"))
+          cards = data["cards"]
+          today = datetime.datetime.now(ZoneInfo("Europe/Berlin")).date()
+          rng = random.Random(today.isoformat() + "-FRS-IHK-2026")
+          priority = [c["id"] for c in cards if c["priority"] == 1]
+          rng.shuffle(priority)
+          mode = "beratung" if today <= datetime.date(2026, 11, 20) else "dokumentation"
+          focus = priority[:16]
+          result = {
+              "date": today.isoformat(),
+              "focus_ids": focus,
+              "mode": mode,
+              "method": "reviewed_question_pool_daily_rotation",
+              "note": "Plan aus geprüftem Fragepool; keine synthetischen FRS-Fakten."
+          }
+          (root / "ihk-daily.json").write_text(
+              json.dumps(result, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8"
+          )
+          print(f"{today}: {len(focus)} Fokusfragen gesetzt")
+          PY
+      - name: Tagesplan veröffentlichen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/ihk-daily.json
+          if git diff --cached --quiet; then
+            echo "Tagesplan bereits aktuell."
+          else
+            git commit -m "chore(ihk): rotate daily study focus"
+            git push
+          fi
