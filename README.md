@@ -9,7 +9,7 @@ Lokale Musikvorbereitung für eine elektronische Sendung beim Freien Radio Stutt
 ## Website & Plenum-Pitch
 
 - `website/index.html` – öffentlicher Sendeleitfaden mit Studio-Termin, Sendekonzept, Voraussetzungen, Workshops und Set-Übersicht
-- `website/plenum.html` – aktualisierter Plenum-Pitch mit Pilotoptionen, DJ-Technik und offenen Entscheidungen (Stand 16.11.2026)
+- `website/plenum.html` – aktualisierter Plenum-Pitch mit Pilotoptionen, DJ-Technik und offenen Entscheidungen (Stand 24.11.2026)
 - [Plenum-Brief vom 07.10.2026](docs/plenum-brief-2026-10-07.md) – ursprünglicher Vorschlag für ein einmaliges Vinyl-Special
 - Navigation in der Präsentation: Pfeiltasten oder PageUp/PageDown. `N` blendet Sprechernotizen ein.
 

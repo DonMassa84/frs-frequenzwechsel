@@ -7,11 +7,11 @@ UID:studiobesuch-20261118@frs-frequenzwechsel
 DTSTAMP:20261116T150000Z
 DTSTART:20261118T120000Z
 DTEND:20261118T170000Z
-STATUS:TENTATIVE
+STATUS:CANCELLED
 TRANSP:TRANSPARENT
-SUMMARY:Frequenzwechsel – möglicher Studiobesuch
+SUMMARY:Frequenzwechsel – abgelaufenes Terminvorschlagsfenster
 LOCATION:Stöckachstraße 16a\, 70190 Stuttgart
-DESCRIPTION:Vorgeschlagenes Zeitfenster.\nTreffzeit mit der Crew abstimmen.
+DESCRIPTION:Abgelaufenes vorgeschlagenes Zeitfenster vom 18.11.2026.\nNeuen Termin mit der Crew abstimmen.
  \nEingang in der Heinrich-Baumann-Straße.
 END:VEVENT
 END:VCALENDAR
