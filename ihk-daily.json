@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-23",
+  "focus_ids": [
+    "frs061",
+    "frs040",
+    "frs059",
+    "frs015",
+    "frs016",
+    "frs007",
+    "frs032",
+    "frs028",
+    "frs052",
+    "frs005",
+    "frs011",
+    "frs044",
+    "frs053",
+    "frs046",
+    "frs060",
+    "frs018"
+  ],
+  "mode": "dokumentation",
+  "method": "reviewed_question_pool_daily_rotation",
+  "note": "Plan aus geprüftem Fragepool; keine synthetischen FRS-Fakten."
+}
