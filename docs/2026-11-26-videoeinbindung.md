@@ -34,8 +34,17 @@ Die RTX 3060 rendert die korrigierten Tafeln mit dem vorhandenen Produktionsskri
 
 ## 9. Kontrolle
 
-Ausstehend sind Asset-Prüfung, Browser-Wiedergabe, responsive Ansicht und Pages-Veröffentlichung. Die tatsächlichen Ergebnisse werden nach der Prüfung ergänzt.
+- Die Webdatei ist 3.556.676 Byte groß. `ffprobe` meldet 40 Sekunden, 1280 × 720, H.264 und AAC-Stereo. Vollständiges Decodieren mit `ffmpeg -xerror` schloss mit Exit 0 ab.
+- Der SHA-256-Wert der lokalen und der vollständig von GitHub Pages abgerufenen MP4 lautet jeweils `fb8d8e02ce50f68ce9915e273a6726a1a0117cde9dd618dc9b164f62f30fdade`.
+- Die Audiopakete der ursprünglichen Fassung und der Webfassung ergeben jeweils `d1c64f770069afa54238c06a5547d0f250a735b8dfc2d06f429db1b06a00b3f1`.
+- Die relativen HTML-Verweise, Videoattribute, JavaScript-Syntax und Git-Whitespace-Prüfung bestanden. Alle vier Videotafeln wurden als Standbilder geprüft.
+- Bei 390 Pixel Viewportbreite misst der Player 347 Pixel. Die Seite hat keinen horizontalen Überlauf. Der temporäre Viewport wurde zurückgesetzt.
+- Im In-App-Browser blieb die Wiedergabe bei Metadaten und Sekunde 0 stehen. Für den tatsächlichen Wiedergabenachweis wurde die öffentliche Seite in Chrome geprüft. Dort startete das Video, ließ sich bei 12,46 Sekunden pausieren und fortsetzen und erreichte 40 Sekunden mit `ended=true`, `muted=false` und ohne Medienfehler. Ein Sprung über die Zeitleiste funktionierte ebenfalls. Die Seite blieb als Ergebnis in Chrome geöffnet.
+- GitHub Pages liefert die MP4 mit `Content-Type: video/mp4` und unterstützt Bereichsabrufe mit HTTP 206. Die Startseite enthält den Teaser samt Poster und Links.
+- Quellcommit `299c2ba` baut auf Inventurstand `858e71b` auf. Veröffentlichungscommit auf `gh-pages` ist `b5d164f`. Der Lauf [45845685771](https://github.com/DonMassa84/frs-frequenzwechsel/actions/runs/45845685771) endete erfolgreich.
 
 ## 10. Nachhaltigkeit
 
-Die ursprüngliche Videofassung und ihr Produktionsskript sind über ihren bisherigen Pfad verfügbar. Der ergänzende Web-Build liegt unter `/home/schattenmacher/Videos/Frequenzwechsel-Teaser-2026-11-26/build_web_teaser.py`. Für die Rücknahme lässt sich der Videoeinbindungs-Commit revertieren und dessen Website-Stand erneut nach `gh-pages` übertragen. Die bestätigten Prüfergebnisse und Commit-IDs werden hier festgehalten.
+Die ursprüngliche Videofassung und ihr Produktionsskript sind über ihren bisherigen Pfad verfügbar. Der ergänzende Web-Build liegt unter `/home/schattenmacher/Videos/Frequenzwechsel-Teaser-2026-11-26/build_web_teaser.py`. Für die Rücknahme lässt sich der Videoeinbindungs-Commit revertieren und dessen Website-Stand erneut nach `gh-pages` übertragen.
+
+Für Folgeaufträge die aktive Pages-Adresse aus der Hosting-Konfiguration prüfen. Die öffentlich geladenen Videodaten mit dem geprüften Asset vergleichen und die Wiedergabe im Browser kontrollieren. Der in dieser Sitzung beobachtete Unterschied zwischen In-App-Browser und Chrome begrenzt den In-App-Nachweis auf Layout und Metadaten. Die erneute Nutzung von `nachhall.pntr.dev` hängt weiterhin von einer funktionierenden DNS-Zuordnung ab.
